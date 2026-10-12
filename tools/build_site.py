@@ -205,7 +205,7 @@ def page(title, body, desc, depth=0):
 </head>
 <body>
 {body}
-<footer class="site-foot"><div class="wrap">披薩食譜筆記　·　配方依課程講義整理與改編</div></footer>
+<footer class="site-foot"><div class="wrap">張家食譜　·　把家裡喜歡的味道好好記下來</div></footer>
 </body>
 </html>
 """
@@ -283,12 +283,19 @@ def index_page():
   <span class="more">看食譜 →</span></div></a>"""
     body = f"""
 <header class="home-head"><div class="wrap">
-  <p class="eyebrow">Pizza Recipes</p>
-  <h1>披薩食譜</h1>
-  <p class="lead">瑪格麗特與青醬野菇披薩，三種做法：課程原版、嘉禾中筋麵粉液種版，以及當天就能出爐的快速發酵版。</p>
+  <p class="eyebrow">The Chang Family Table</p>
+  <h1>張家食譜</h1>
+  <p class="lead">把家裡反覆做、值得留下的味道整理在一起。從披薩開始，慢慢收錄家常菜、麵包、甜點與更多料理。</p>
 </div></header>
-<main class="wrap"><div class="list">{cards}</div></main>"""
-    return page("披薩食譜", body, "瑪格麗特、青醬野菇披薩的三種做法")
+<main class="wrap">
+  <div class="collection-head">
+    <p class="eyebrow">Pizza</p>
+    <h2>披薩</h2>
+    <p>目前收錄瑪格麗特與青醬野菇披薩的三種做法，依手邊麵粉與製作時間挑一份開始。</p>
+  </div>
+  <div class="list">{cards}</div>
+</main>"""
+    return page("張家食譜", body, "張家餐桌上的家常菜、麵包、甜點與各種料理筆記")
 
 def main():
     if OUT.exists(): shutil.rmtree(OUT)
